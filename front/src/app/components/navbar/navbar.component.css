@@ -1,0 +1,17 @@
+.col-xs-12 {
+    align-items: center;
+    display: flex;
+    font-size: x-large;
+    cursor: pointer;
+    text-align: center;
+}
+a {
+    width: 100%;
+    color: white;
+    text-decoration: none;  
+}
+
+h1 {
+    width: 100%;
+    text-decoration: solid 1px red underline;
+}

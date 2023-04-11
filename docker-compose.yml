@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  elgoalweb-node-dev:
+    container_name: elgoalweb-node-dev
+    build:
+      context: ./back
+    ports:
+      - 8080:8080
+    working_dir: /app/back
+    volumes:
+      - .:/app
+    command: ["npm", "run", "start"]
+    env_file:
+      - ./.env-dev
+
+  elgoalweb-angular-dev:
+    container_name: elgoalweb-angular-dev
+    build:
+      context: ./front
+    ports:
+      - 4200:4200
+    working_dir: /app/front
+    volumes:
+      - .:/app
+    command: ["npm", "run", "start"]
+    env_file:
+      - ./.env-dev
+    depends_on:
+      - elgoalweb-node-dev
